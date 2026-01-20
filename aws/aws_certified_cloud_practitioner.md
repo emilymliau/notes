@@ -63,7 +63,7 @@ Types of Amazon EC2 Instances
 - general purpose: balance of compute, memory, and networking resources for diverse workloads
 - compute optimized: used for compute-intensive tasks (gaming, HPC, ML)
 - memory optimized: used for memory-intensive tasks (large-scale data processing)
-- accelerated computing: used for performing functions such as floating point number calculations, graphics processing, or data pattern matching
+- accelerated computing: used for GPU-optimized workflows, such as floating point number calculations, graphics processing, or data pattern matching
 - storage optimized: used for high-performance workloads for data stored locally (large databases, data warehousing, I/O-intensive applications)
   
 Accessing APIs
@@ -91,7 +91,7 @@ How to Use AMIs
   
 Amazon EC2 Pricing Options
 - On-Demand: pay-as-you-use, no upfront payments and can use without making long-term commitments
-- Savings Plan: 72% discount for critical/predictable workloads, where users must commit to a consistent usage level over a certain time period
+- Savings Plan: 72% discount for critical/predictable workloads, where users must commit to a consistent usage level over a certain time period of 1-3 years
 - Reserved Instances: 75% discount, intended for steady-state workloads or those with predictable level of usage
 - Spot Instances: request unused EC2 capacity at up to 90% discount, but the capacity can be reclaimed by AWS at any point
 - Dedicated Hosts: reserve entire physical server where customers control resource allocation, intended for workloads with strict security requirements or compliance with regulatory standards
@@ -128,10 +128,40 @@ Cloud Messaging Services
 - Amazon SNS: publishers send messages to subscribers through SNS topics
 - tightly coupled architecture: components are tightly connected and dependent on each other
 - loosely coupled architecture: components can operate independently
-
+  
+**TOPICS TO REVIEW**
+- Types of Amazon EC2 Instances
+- Amazon EC2 Pricing Options
+- Elastic Load Balancing (ELB)
+- Cloud Messaging Services
+  
 ## Module 3: Exploring Compute Services
 
+AWS Compute Options
+- unmanaged service: user has control over patching, scaling, and OS management; AWS manages underlying infrastructure
+- managed service: AWS manages operational responsibilities; user focuses on building application rather than building infrastructure
+- fully managed service: no need for user to provision or manage any servers, as AWS manages all the infrastructure
 
+AWS Lambda
+- AWS Lambda: serverless compute service used to build event-driven applications
+- 3 major components of AWS Lambda: function, triggers, runtimes
+
+Containers and Orchestration
+- container: package an application's code and dependencies into a single, portable unit for workflows that require security, reliability, and scalability
+- containers allow for faster start times and improved resource effiency
+- containers are faster and more resource efficient than VMs since they share host's OS
+
+Orchestration Services
+- Amazon Elastic Container Service (ECS): user defines application's container images and resources, such as EC2 instance types and load balancers; used for small-to-medium sized businesses
+- Amazon Elastic Kubernetes Service (EKS): run Kubernetes clusters on AWS; used when enterprises need full control over infrastructure
+- Amazon Elastic Container Registry (ECR): fully managed container registry that stores, manages, and deploys container images, including application and its dependencies
+- Amazon EC2: user manages virtual machines that run containers; users have full control, but need to manage underlying infrastructure
+- Amazon Fargate: serverless architecture that offers efficiency and convenience
+- AWS Elastic Beanstalk: user provides application code and configurations, and AWS builds the environment based on provided information
+- AWS Batch: run heavy batch computing workloads with infrastructure management, such as data processing or running simulations
+- Amazon LightSail: simplifies hosting for running web applications and websites
+- AWS Outposts: links AWS cloud services with on-prem data center for hybrid environments
+  
 ## Module 4: Going Global
 
 
