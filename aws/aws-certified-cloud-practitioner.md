@@ -226,7 +226,30 @@ AWS Direct Connect
 - latency-sensitive applications: bypass internet and provide consistent, low-latency network experience for video streaming and real-time applications needing high performance
 - large-scale data migration/transfer: ensure smooth and reliable data transfers at large-scale for real-time analysis
 - hybrid cloud architectures: use Direct Connect to link AWS and on-prem networks to build applications across multiple environments without compromising performance
+
+Subnets
+- subnet: section of VPC to group resources based on security and operational needs, can be public or private
+- public subnet: contains resources that need to be accessible by the public
+- private subnet: contains resources that should only be accessible through private network
+- user defines rules in VPC to allow resources in different subnets to communicate with each other
   
+Network Traffic
+- packet: unit of data sent over the internet or a network; enters VPC through internet gateway
+- network ACL: virtual firewall that controls inbound and outbound traffic at the subnet level
+- each AWS account includes default network ACL, and user can add additional rules
+- subnet level, stateless packet filtering, allow and deny type rules, return traffic must be implicitly allowed for inbound and outbound, user has broad control of traffic in and out of subnets
+- stateless packet filtering: network ACLs do not retain information on inbound and outbound packets
+- user is responsible for securing subnets and resources in VPC with network ACLs and security groups
+  
+Security Groups
+- denies all inbound traffic and allows all outbound traffic
+- user can create one or multiple security groups for multiple Amazon EC2 instances within the same VPC
+- stateful packet filtering: security groups retain information about previous decisions made for incoming packets
+- instance level, stateful packet filtering, allow type rules, return traffic is automatically allowed if inbound traffic is allowed, user has fine-grained control of traffic for individal EC2 instances
+
+Building an Amazon VPC
+- create VPC, subnets, internet gateway, and route traffic
+- edge networking: bringing information storage and computing abilities closer to the devices that produce that information and the users who consume it
 Global Networking
 - edge networking: bringing information storage and computing abilities closer to devices that produce that information and the users who consume it
 - allows organizations to access data and content with lower latency
